@@ -12,16 +12,15 @@ var guessesRemaining = [""]
 var chosenWord = [""]
 
 // Key listener:
-// document.addEventListener("keypress", letterPressed);
-// function letterPressed(event) {
-//     var letter = String.fromCharCode(event.keyCode);
-//   console.log(letter)
-// }
+document.addEventListener("keypress", letterPressed);
+function letterPressed(event) {
+    var letter = String.fromCharCode(event.keyCode);
+  console.log(letter)
+}
 
 // "Start game function"
-
-function gameStart() {
-    // onkeypress
+// 
+// function gameStart() {
     var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
-    console.log(randomWord);
-};
+        console.log(randomWord);
+// };
