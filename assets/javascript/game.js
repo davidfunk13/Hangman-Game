@@ -1,26 +1,30 @@
-var wordList = ["Baltimore Ravens", "Arizona Cardinals", "Atlanta Falcons", "Bufalo Bills",
-"Carolina Panthers", "Chicago Bears", "Cincinnati Bengals", "Cleveland Browns", "Dallas Cowboys",
-"Denver Broncos", "Detroit Lions", "Green Bay Packers", "Houston Texans", "Indianapolis Colts",
-"Jacksonville Jaguars", "Kansas City Cheifs", "Los Angeles Chargers", "Los Angeles Rams",
-"Miami Dolphins", "Minnesota Vikings", "New England Patriots", "New Orleans Saints",
-"New York Giants", "New York Jets", "Oakland Raiders", "Philadelphia Eagles", "Pittsburgh Steelers",
-"San Fransisco Forty Niners", "Seattle Seahawks", "Tampa Bay Buccaneers", "Tennessee Titans",
-"Washington Redskins"];
-var wins = [""]
-var lettersGuessed = [""]
-var guessesRemaining = [""]
-var chosenWord = [""]
+var wordList = ["Ravens", "Cardinals", "Falcons", "Bills",
+"Panthers", "Bears", "Bengals", "Browns", "Cowboys",
+"Broncos", "Lions", "Packers", "Texans", "Colts",
+"Jaguars", "Cheifs", "Chargers", "Rams",
+"Dolphins", "Vikings", "Patriots", "Saints",
+"Giants", "Jets", "Raiders", "Eagles", "Steelers",
+"Forty Niners", "Seahawks", "Buccaneers", "Titans",
+"Redskins"];
+var wins = [""];
+var lettersGuessed = [""];
+var guessesRemaining = [""];
+var chosenWord = [];
+var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
+var string = [];
 
 // Key listener:
-document.addEventListener("keypress", letterPressed);
-function letterPressed(event) {
-    var letter = String.fromCharCode(event.keyCode);
-  console.log(letter)
-}
+// document.addEventListener("keypress", letterPressed);
+// function letterPressed(event) {
+//     var letter = String.fromCharCode(event.keyCode);
+//   console.log(letter)
+// }
 
 // "Start game function"
-// 
 // function gameStart() {
-    var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
+    for (var i = 0; i < randomWord.length; i++) {
+        chosenWord[i] = "_";
+        console.log(chosenWord);
         console.log(randomWord);
-// };
+    }
+// }
