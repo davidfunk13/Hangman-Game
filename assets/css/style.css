@@ -1,0 +1,13 @@
+body {
+    background: rgb(249,241,217);
+}
+.col-md-5 {
+    border: 2px solid rgb(54, 26, 1);
+}
+.col-md-6 {
+    border: 2px solid rgb(54, 26, 1);
+}
+.jumbotron {
+    border: 2px solid rgb(54, 26, 1);
+    background: rgb(226,216,186);
+}
