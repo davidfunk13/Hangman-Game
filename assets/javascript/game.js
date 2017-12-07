@@ -18,12 +18,9 @@ var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
 //   console.log(letter)
 // }
 
-// "Start game function"
-// function gameStart() {
     for (var i = 0; i < randomWord.length; i++) {
         chosenWord[i] = "_";
         console.log(chosenWord,randomWord);
-        document.getElementById("spaces").innerHTML = chosenWord, randomWord;
+        document.getElementById("spaces").innerHTML = randomWord;
 
     };
-// };
