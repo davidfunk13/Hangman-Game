@@ -10,3 +10,10 @@ var wins = [""]
 var lettersGuessed = [""]
 var guessesRemaining = [""]
 var chosenWord = [""]
+
+// Key listener:
+document.addEventListener("keypress", letterPressed);
+function letterPressed(event) {
+    var letter = String.fromCharCode(event.keyCode);
+  console.log(letter)
+}
