@@ -6,12 +6,10 @@ var wordList = ["Ravens", "Cardinals", "Falcons", "Bills",
 "Giants", "Jets", "Raiders", "Eagles", "Steelers",
 "Forty Niners", "Seahawks", "Buccaneers", "Titans",
 "Redskins"];
-var wins = [""];
-var lettersGuessed = [""];
-var guessesRemaining = [""];
 var chosenWord = [];
 var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
-var string = [];
+
+
 
 // Key listener:
 // document.addEventListener("keypress", letterPressed);
@@ -24,7 +22,8 @@ var string = [];
 // function gameStart() {
     for (var i = 0; i < randomWord.length; i++) {
         chosenWord[i] = "_";
-        console.log(chosenWord);
-        console.log(randomWord);
-    }
-// }
+        console.log(chosenWord,randomWord);
+        document.getElementById("spaces").innerHTML = chosenWord, randomWord;
+
+    };
+// };
