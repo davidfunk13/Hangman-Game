@@ -7,23 +7,22 @@ var wordList = ["Ravens", "Cardinals", "Falcons", "Bills",
     "Forty Niners", "Seahawks", "Buccaneers", "Titans",
     "Redskins"];
 var wordBlanks = [];
-var guess = keyListen();
+var guessedLetters = [];
+// var guess = prompt("One letter guess")
 
     // Key listener:
-    function keyListen() {
         document.addEventListener("keypress", letterPressed);
         function letterPressed(event) {
             var letter = String.fromCharCode(event.keyCode);
-            console.log(letter)
+            guessedLetters.push(letter);
+            document.getElementById("lettersGuessed").innerHTML = guessedLetters;
+            console.log(guessedLetters)
         }
-    }
-
-
-// Start game function
-// function startGame() {
-var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
-for (var i = 0; i < randomWord.length; i++) {
-    wordBlanks[i] = "_";
-    // console.log(wordBlanks,randomWord);
-    document.getElementById("spaces").innerHTML = wordBlanks.join(" ");
-};
+// var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
+// for (var i = 0; i < randomWord.length; i++) {
+//     wordBlanks[i] = "_";
+//     // console.log(wordBlanks,randomWord);
+//     document.getElementById("spaces").innerHTML = wordBlanks.join(" ");
+// };
+// guess functionality
+// if (guess === )
