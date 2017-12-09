@@ -17,6 +17,8 @@ var underscores = [];
 var guessedLetters = [];
 //Splits chosen word into seperate letter strings
 var splitRandomWord = randomWord.split("");
+//Correct guesses array 
+var correctGuesses = [];
 // This runs through the chosen randomWord and for each character in it returns and "_" in a new array
 for (var i = 0; i < randomWord.length; i++) {
     underscores[i] = "_";
@@ -29,13 +31,21 @@ document.addEventListener("keypress", letterPressed);
 
 function letterPressed() {
     letter = String.fromCharCode(event.keyCode).toUpperCase();
-    guessedLetters.push(letter);
-    document.getElementById("lettersGuessed").innerHTML = guessedLetters;
+    
     for (var j = 0; j < splitRandomWord.length; j++) {
         if (letter === splitRandomWord[j]) {
-            console.log("ugh");
+            console.log("correct! contains:" + letter);
+            correctGuesses.push(letter);
+            guessedLetters.push(letter);
+            console.log(correctGuesses, guessedLetters);
+            break;
         }
-        else {
+        if (letter !== splitRandomWord[j]) {
+            console.log("WRONG WOW YOU'RE REALLY DUMB there's no " + letter + " in this word.")
+            guessedLetters.push(letter);
+            document.getElementById("lettersGuessed").innerHTML = guessedLetters;            
+            console.log(guessedLetters)
+            break;
         }
     }
 };
