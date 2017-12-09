@@ -31,21 +31,41 @@ document.addEventListener("keypress", letterPressed);
 
 function letterPressed() {
     letter = String.fromCharCode(event.keyCode).toUpperCase();
-    
-    for (var j = 0; j < splitRandomWord.length; j++) {
-        if (letter === splitRandomWord[j]) {
-            console.log("correct! contains:" + letter);
-            correctGuesses.push(letter);
+
+    if (splitRandomWord.includes(letter) === false) {
             guessedLetters.push(letter);
-            console.log(correctGuesses, guessedLetters);
-            break;
-        }
-        if (letter !== splitRandomWord[j]) {
             console.log("WRONG WOW YOU'RE REALLY DUMB there's no " + letter + " in this word.")
-            guessedLetters.push(letter);
             document.getElementById("lettersGuessed").innerHTML = guessedLetters;            
             console.log(guessedLetters)
-            break;
-        }
+    } else {
+        for (var j = 0; j < splitRandomWord.length; j++) {
+            if (letter === splitRandomWord[j]) {
+                console.log("correct! contains:" + letter);
+                correctGuesses.push(letter);
+                guessedLetters.push(letter);
+                underscores[j] = letter;
+                splitRandomWord.push(underscores[j]);
+                console.log(underscores[j]);
+                console.log(correctGuesses, guessedLetters);
+            }
+    }
+
+
+    
+    // for (var j = 0; j < splitRandomWord.length; j++) {
+    //     if (letter === splitRandomWord[j]) {
+    //         console.log("correct! contains:" + letter);
+    //         correctGuesses.push(letter);
+    //         guessedLetters.push(letter);
+    //         console.log(correctGuesses, guessedLetters);
+    //         break;
+    //     }
+        // if (letter !== splitRandomWord[j]) {
+        //     console.log("WRONG WOW YOU'RE REALLY DUMB there's no " + letter + " in this word.")
+        //     guessedLetters.push(letter);
+        //     document.getElementById("lettersGuessed").innerHTML = guessedLetters;            
+        //     console.log(guessedLetters)
+        //     break;
+        // }
     }
 };
