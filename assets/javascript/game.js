@@ -17,8 +17,8 @@ for (var i = 0; i < randomWord.length; i++) {
     console.log(wordBlanks, randomWord);
     document.getElementById("spaces").innerHTML = wordBlanks.join(" ");
 };
-splitRandomWord.push(randomWord);
-console.log(splitRandomWord);
+// splitRandomWord.push(randomWord);
+// console.log(splitRandomWord);
 
 function splitString(randomWord) {
     var splitRandomWord = randomWord.split("");
