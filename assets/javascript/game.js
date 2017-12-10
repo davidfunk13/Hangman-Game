@@ -8,6 +8,7 @@ var wordList = ["RAVENS", "CARDINALS", "FALCONS", "BILLS",
     "FORTYNINERS", "SEAHAWKS", "BUCCANEERS", "TITANS",
     "REDSKINS"
 ];
+
 // Picks a word at Random
 var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
 
@@ -21,10 +22,13 @@ var guessedLetters = [];
 var splitRandomWord = randomWord.split("");
 
 //Correct guesses array 
-var correctGuesses = [];
+var correctGuesses = [];                  
 
 //Guesses remaining
 var guessesRemaining = 8;
+
+//Define match variable
+
 
 // This runs through the chosen randomWord and for each character in it returns and "_" in a new array
 const spacesDiv = document.getElementById('spaces');
@@ -39,6 +43,7 @@ console.log(splitRandomWord);
 
 // Detects user's keystrokes, logs them to an array "lettersguessed" displayed on the htmlDOC.
 document.addEventListener("keypress", letterPressed);
+var letters = document.querySelectorAll("span[data-letter]");                
 
 // Keylogger + Input Conditional statements
 function letterPressed() {
@@ -62,9 +67,10 @@ function letterPressed() {
                 console.log("correct! contains:" + letter);
                 correctGuesses.push(letter);
                 guessedLetters.push(letter);
-                document.getElementById("lettersGuessed").innerHTML = guessedLetters;
-                document.getElementById("spaces").innerHTML = splitRandomWord[j];
+                document.getElementById("lettersGuessed").innerHTML = guessedLetters;               
+                letters[j].textContent = letter;                
             }
         }
     }
 };
+
