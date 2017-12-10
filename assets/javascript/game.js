@@ -27,8 +27,8 @@ var correctGuesses = [];
 //Guesses remaining
 var guessesRemaining = 8;
 
-//Define match variable
-
+//displays lives remaining on the document
+document.getElementById("guessesRemaining").innerHTML = guessesRemaining;
 
 // This runs through the chosen randomWord and for each character in it returns and "_" in a new array
 const spacesDiv = document.getElementById('spaces');
@@ -56,7 +56,7 @@ function letterPressed() {
         console.log(guessedLetters)
         if (splitRandomWord.includes(letter) === false) {
             guessesRemaining--;
-            console.log(guessesRemaining);
+            document.getElementById("guessesRemaining").innerHTML = guessesRemaining;            
             if (guessesRemaining === 0) {
                 alert("You lose");
             }
