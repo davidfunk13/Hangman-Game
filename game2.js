@@ -19,15 +19,21 @@ var guessedLetters = [];
 var splitRandomWord = randomWord.split("");
 //Correct guesses array 
 var correctGuesses = [];
-//Guesses remaining
-var guessesRemaining = 8;
 // This runs through the chosen randomWord and for each character in it returns and "_" in a new array
 for (var i = 0; i < randomWord.length; i++) {
 underscores[i] = "_";
-console.log(underscores, randomWord);
+console.log("underscore ", underscores);
+console.log("random word " , randomWord)
 document.getElementById("spaces").innerHTML = underscores.join(" ");
 };
-console.log(splitRandomWord);
+
+// console.log(randomWord.length);
+// for(var x = 0; x < randomWord.length; x++){
+//     underscores.push("_")
+//     var correctspacing = underscores.split()
+//     document.getElementById("spaces").innerHTML = correctspacing;
+// }
+// console.log(splitRandomWord);
 // Detects user's keystrokes, logs them to an array "lettersguessed" displayed on the htmlDOC.
 document.addEventListener("keypress", letterPressed);
 
@@ -36,31 +42,22 @@ letter = String.fromCharCode(event.keyCode).toUpperCase();
 
 if (splitRandomWord.includes(letter) === false) {
         guessedLetters.push(letter);
-        console.log("there's no " + letter + " in this word.")
+        console.log("WRONG WOW YOU'RE REALLY DUMB there's no " + letter + " in this word.")
         document.getElementById("lettersGuessed").innerHTML = guessedLetters;            
         console.log(guessedLetters)
-        if (splitRandomWord.includes(letter) === false) {
-            guessesRemaining--;
-            console.log(guessesRemaining);
-            if (guessesRemaining === 0) {
-                alert("You lose");
-            }
-        }
 } else {
     for (var j = 0; j < splitRandomWord.length; j++) {
         if (letter === splitRandomWord[j]) {
             console.log("correct! contains:" + letter);
             correctGuesses.push(letter);
             guessedLetters.push(letter);
-            document.getElementById("lettersGuessed").innerHTML = guessedLetters;            
-            document.getElementById("spaces").innerHTML = splitRandomWord[j];
-            // underscores[j] = letter;
-            // console.log(splitRandomWord.push(underscores[j]));
+            underscores[j] = letter;
+            underscores.push(splitRandomWord[j]);
             console.log(underscores[j]);
             console.log(correctGuesses, guessedLetters);
+            document.getElementById("spaces").innerHTML = correctGuesses; 
         }
 }
-
 
 
 
@@ -73,7 +70,7 @@ if (splitRandomWord.includes(letter) === false) {
 //         break;
 //     }
     // if (letter !== splitRandomWord[j]) {
-    //     console.log("there's no " + letter + " in this word.")
+    //     console.log("WRONG WOW YOU'RE REALLY DUMB there's no " + letter + " in this word.")
     //     guessedLetters.push(letter);
     //     document.getElementById("lettersGuessed").innerHTML = guessedLetters;            
     //     console.log(guessedLetters)
