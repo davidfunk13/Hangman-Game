@@ -19,7 +19,7 @@ var underscores = [];
 var guessedLetters = [];
 
 //Splits chosen word into seperate letter strings
-var splitRandomWord = randomWord.split("");
+var splitRandomWord = randomWord.split(""); 
 
 //Correct guesses array 
 var correctGuesses = [];                  
@@ -38,6 +38,9 @@ for (var i = 0; i < splitRandomWord.length; i++) {
     underscores.textContent = '_';
     underscores.style.marginRight = '1ch';
     spacesDiv.appendChild(underscores);
+    if (guessedLetters === splitRandomWord) {
+        alert("YOU WIN!");
+    }
 }
 console.log(splitRandomWord);
 
@@ -68,9 +71,8 @@ function letterPressed() {
                 correctGuesses.push(letter);
                 guessedLetters.push(letter);
                 document.getElementById("lettersGuessed").innerHTML = guessedLetters;               
-                letters[j].textContent = letter;                
+                letters[j].textContent = letter;   
             }
         }
     }
 };
-
